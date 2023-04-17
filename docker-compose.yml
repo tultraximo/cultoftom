@@ -1,0 +1,21 @@
+services:
+
+  cot-react:
+    image: node:latest
+    command: npm start
+    working_dir: /app
+    volumes:
+      - ./ghi/cot-react:/app
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3001
+    ports:
+      - "3001:3001"
+
+  cultoftom:
+    build: .
+    ports:
+      - "8000:8000"
+
+volumes:
+  cultoftom-db:
